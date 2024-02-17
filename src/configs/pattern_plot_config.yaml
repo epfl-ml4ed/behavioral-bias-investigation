@@ -1,0 +1,57 @@
+---
+# Check notebooks for usability
+s_support: True
+differences: True
+dsm_plot: True
+i_support: True
+experiment:
+  name: pattern-mining/EDM24/feature-0
+  keyword: 
+    - patterns_ # for lasat
+  regex: "[A-z/]*patterns_(.*).csv"
+  model: lasat
+heatmap_groups:
+  1:
+    main: francais.label0
+    others: 
+      - francais.label1
+
+  2:
+    main: deutsch.label0
+    others: 
+      - deutsch.label1
+
+  3:
+    main: francais.label1
+    others: 
+      - deutsch.label1
+
+  4:
+    main: francais.label0
+    others: 
+      - deutsch.label0
+dsm:
+  pvalue: 0.05
+plot:
+  figsize:
+    - 4
+    - 12
+  isupport_figsize:
+    - 12
+    - 7
+  cmap: 
+    main: viridis
+    difference: viridis
+  colour:
+    main: plum
+    difference: dodgerblue
+  annot: True
+  isupport_patterns:
+    - " noobserved_other"
+    - " noobserved_other"
+
+
+
+
+...
+
