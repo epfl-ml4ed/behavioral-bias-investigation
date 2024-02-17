@@ -1,0 +1,40 @@
+---
+######### To use in combination mode #########
+# parameters: put the names of the parameters for which you wish to test different values
+# combinations: in the same order of the parameter, one entry per combination
+# parameters:
+#   - dropout
+#   - n_cells
+#   - batch_size
+#   - epochs
+# combinations:
+#   - - 0.5 # dropout
+#     - - 16 # n_cells
+#     - 4 # batch_size
+#     - 30 # epochs
+#   - - 0.5 # combination 2: idem above
+#     - - 8
+#     - 4
+#     - 30
+
+######### To use in exhaustive mode #########
+# For each parameters you wish to try out values: key is the name, value is a list of values to try out
+dropout:
+  - 0.5
+  - 0.1
+n_cells:
+  - - 16
+  - - 32
+batch_size:
+  - 4
+  - 32
+epochs:
+  - 30
+dropout_clf:
+  - 0
+  - 0.2
+dropout_gru:
+  - 0
+  - 0.2
+  - 0.5
+...
