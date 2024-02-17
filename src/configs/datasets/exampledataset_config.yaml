@@ -1,0 +1,20 @@
+---
+paths: 
+  root: '../data/exampledataset/' # path to the data
+data:
+  available_demographics:
+    - attribute1 # name of the available attribute: attribute1
+    - attribute2 # name of the available attribute: attribute2
+  label_map: map-to-use # map to transform an attribute into the target (post test score to binary high/low level for example)
+  features: config 
+  demographics_maps:
+      attribute1: lam # put lam if you don't wish to replace the name of the featurer
+      attribute2: # put an exhaustive map if you wish to replace some values in your features. This is useful when you have lots of small group and want to give them all the same name (minority) for example
+        att_a: nicename_a
+        att_b: nicename_b
+pipeline:
+    demographics: # combinations on which to do the pattern mining
+      - attribute1 # will do the comparison across all possible values of atttribute 1
+      - attribute2 # will do the comparison across all possible values of atttribute 2
+      - attribute1.attribute2 # will do the comparison across all possible values of attribute1-attribute2 combinations
+...
