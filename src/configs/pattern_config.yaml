@@ -1,0 +1,28 @@
+---
+experiment:
+  root_name: /EDM24/dataset # will create a subfolder in experiments, with root_name
+  name: x # autofill
+  max_seed: 999 # when doing multiple runs
+  model_seeds_n: 1
+data:
+  dataset: tuglet # dataset
+  sequencer: dmkt # feature
+pm:
+  pipeline:
+    model: lasat # pattern mining algorithm
+    demographics: # autofill
+      - dummy 
+  models:
+    apriori: # Apriori algorithm parameters
+      association_consequent:
+        - label0
+        - label1
+      association_labels: "label" 
+      support_threshold: 0.5
+      association_threshold: 0.5
+    lasat: # LASAT model parameters
+      support_threshold: 0.5
+  demographics:
+    dummy: x
+    
+...
