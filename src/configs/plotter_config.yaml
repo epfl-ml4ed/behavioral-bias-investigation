@@ -1,0 +1,41 @@
+experiment:
+  name: baseline_torch_concat # name of the subfolder in experiment to look into, as specific as possible, must only be a folder with one viable experiments in it
+  keyword: 
+    - xval # common trait within all nested cross val files TRY TO PUT SEVERAL
+## To visualise classification performances
+plot_style:
+  title: tryout
+  metric: roc
+  sizing_mode: stretch_both
+  style: algo_features
+  type: errorplot #lineplot #errorplot # change in early pred -> lineplot
+  boxplot_spacing: 0.4
+  radius: 0.005
+  bar_length: 0.05
+  ystyle:
+    label: roc
+    range:
+      - 0.3
+      - 1
+  xstyle:
+    label: seeds
+    type: regex
+    range:
+      - 0
+      - 5
+    groups:
+      - full
+    regexes:
+      - modelseeds([0-9]+)
+      #- experiment-1/([A-z\-]*)/prim
+pipeline:
+  data:
+    dataset: tuglet
+    sequencer: dmkt
+  ml:
+    models: 
+      maxlen: justforcompatibility
+      n_intermediate: whocares
+  clustering:
+    algo: knn
+
