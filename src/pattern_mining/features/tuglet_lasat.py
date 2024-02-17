@@ -18,6 +18,8 @@ class LasatTugletSequencer(TugletSequencer):
         raise NotImplementedError
 
     def _create_features(self, student):
+        """Timesteps need to be separated by semicolons
+        """
         string_student = [self._vector_to_feature(timestep) for timestep in student]
         features = '; '.join(string_student)
         return features
