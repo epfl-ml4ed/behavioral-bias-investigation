@@ -1,0 +1,75 @@
+---
+experiment:
+  root_name: experiment_name/experiment_subgroup_1 # A folder will be created under experiments/ with the root_name, to save all experiment results
+  name: x # leave opened
+  labels: binconcepts # name of the attribute to use as target for the classifier
+  nclasses: 2 # number of classes in the algorithm
+  max_seed: 999 # when training over multiple random seeds, use this as the highest seed you wish to be able to generate
+  model_seeds_n: 1 # model seed if you want to fix something
+seeds: # seeds to set if you wish to set them 
+  oversampler: 11 
+  model: 14
+  splitter: 129 # 21
+data:
+  type: x
+  dataset: tuglet # name of the dataset 
+  sequencer: sequential # type of feature
+  cropper: full # whether to use the full length of the sequences
+ml:
+  pipeline:
+    sampler: nosplr # whether to use a sampler during the classification
+    xvalidator: nonnested_xval # choses the type of cross validation
+    outer_splitter: stratkf # choses the type of splitter 
+    gs_splitter: stratkf # choses the type of splitter for the gridsearch
+    gridsearch: supgs #choses the type of gridsearch (supervised or non supervised)
+    parameters_gridsearch: exhaustive # combinations or exhaustive 
+    scorer: 2clfscorer # either binaru or multiple class, depending on the classification problem
+    model: rnn_attention # algorithm 
+  splitters:
+    nfolds: 10 # number of folds
+    shuffle: True 
+    stratifier_col: y # attributes on which to stratify
+  xvalidators: 
+    nested_xval:
+      optim_scoring: roc # what to optimise on for nested cross validation
+      paramgrid: # leave empty, autofill
+        x: 
+          - x
+  models:
+    maxlen: x # auto fill in the data loader, or put it here immediately
+    padding_value: 0 # always use 0
+    rnn_attention: # parameter for the model
+      attention_hidden_size: 16 
+      attention_agg: none
+      attention_type: kqv
+      rnn_cell_type: gru
+      rnn_ncells: 16
+      rnn_nlayers: 1
+      rnn_dropout: 0
+      rnn_type: pad
+      classifier_dropout: 0.02
+      batch_size: 16
+      padding_value: 0
+      epochs: 50
+      early_stopping: False
+      save_best_model: False
+      loss_name: nll
+      loss_reduction: sum
+  scorer: # what metric to record
+    scoring_metrics: 
+      - tp
+      - fp
+      - roc
+      - recall
+      - precision
+      - balanced_accuracy
+      - roc
+    fairness_metrics:
+      - tp
+      - fp
+      - roc
+      - recall
+      - precision
+      - balanced_accuracy
+      - roc
+...
