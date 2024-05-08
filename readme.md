@@ -7,6 +7,7 @@ Functional code
 
 
 # structure
+```bash
 .
 ├── data                   # datasets
 ├── src                    # source code 
@@ -17,6 +18,9 @@ Functional code
 ├── notebooks              # notebooks to plot the results
 ├── results                # automatically generated results folder
 └── README.md              # Hello World
+```
+
+
 # Run
 ## Classification
 - add your dataset in the data folder
