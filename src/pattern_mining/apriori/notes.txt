@@ -1,0 +1,12 @@
+- min support -> change to minimum show
+
+Procedure:
+1. minimum support fine (yasmin)
+2. List of items https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/#apriori-frequent-itemsets-via-the-apriori-algorithm
+3. transform https://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/#apriori-frequent-itemsets-via-the-apriori-algorithm
+4. A priori apriori(df, min_support=0.6, use_colnames=True)
+5. Select sequencer
+
+5; Implement load_a_priori_sequences
+
+class

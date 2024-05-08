@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<expconfig>
+  <experimentdef>
+    <!-- Experiment configuration -->
+    <source>
+      <type>SeqFileIn</type>
+    </source>
+    <analysis>
+      <type>SeqPatternMine</type>
+      <input>SeqFileIn</input>
+    </analysis>
+    <analysis>
+      <type>ResultSort</type>
+      <input>SeqPatternMine</input>
+    </analysis>
+    <output>
+      <type>OutSeqPatternResults</type>
+      <input>ResultSort</input>
+    </output>
+  </experimentdef>
+</expconfig>
