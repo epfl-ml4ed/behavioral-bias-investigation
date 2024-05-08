@@ -1,0 +1,15 @@
+---
+LSTM:
+  capacitor_colorado: '#004643'
+  colorado_capacitor: '#004643'
+  chemlab_beerslaw: '#D1AC00'
+  generalised: '#D1AC00'
+dkvmn:
+  capacitor_colorado: '#3F7267'
+  colorado_capacitor: '#3F7267'
+  chemlab_beerslaw: '#DCBE35'
+dmkt:
+  capacitor_colorado: '#7D9D8B'
+  colorado_capacitor: '#7D9D8B'
+  chemlab_beerslaw: '#E6D06A'
+...
